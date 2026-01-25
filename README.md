@@ -9,6 +9,7 @@ A standalone workspace overview module for Hyprland using Quickshell - shows all
 ![Qt6](https://img.shields.io/badge/Qt-6-green?style=flat-square)
 ![License](https://img.shields.io/badge/License-GPL-orange?style=flat-square)
 
+
 </div>
 
 ---
@@ -17,7 +18,7 @@ A standalone workspace overview module for Hyprland using Quickshell - shows all
 
 ![Overview Screenshot](assets/image.png)
 
-https://github.com/user-attachments/assets/79ceb141-6b9e-4956-8e09-aaf72b66550c
+https://github.com/user-attachments/assets/9c3d2488-1c24-4cdd-84cd-87c4397d02a8
 
 > *Workspace overview showing live window previews with drag-and-drop support*
 
