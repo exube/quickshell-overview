@@ -26,9 +26,9 @@ Item { // Window
     property bool hovered: false
     property bool pressed: false
 
-    property var iconToWindowRatio: 0.25
-    property var xwaylandIndicatorToIconRatio: 0.35
-    property var iconToWindowRatioCompact: 0.45
+    property var iconToWindowRatio: Config.options.windowPreview.iconToWindowRatio
+    property var xwaylandIndicatorToIconRatio: Config.options.windowPreview.xwaylandIndicatorToIconRatio
+    property var iconToWindowRatioCompact: Config.options.windowPreview.iconToWindowRatioCompact
     property var entry: DesktopEntries.heuristicLookup(windowData?.class)
     property var iconPath: Quickshell.iconPath(entry?.icon ?? windowData?.class ?? "application-x-executable", "image-missing")
     property bool compactMode: Appearance.font.pixelSize.smaller * 4 > targetWindowHeight || Appearance.font.pixelSize.smaller * 4 > targetWindowWidth
@@ -39,7 +39,7 @@ Item { // Window
     y: initY
     width: Math.min((windowData?.size[0] ?? 100) * root.scale, availableWorkspaceWidth)
     height: Math.min((windowData?.size[1] ?? 100) * root.scale, availableWorkspaceHeight)
-    opacity: (windowData?.monitor ?? -1) == widgetMonitorId ? 1 : 0.4
+    opacity: (windowData?.monitor ?? -1) == widgetMonitorId ? 1 : Config.options.windowPreview.inactiveMonitorOpacity
 
     clip: true
 

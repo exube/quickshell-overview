@@ -77,28 +77,28 @@ Singleton {
     }
 
     rounding: QtObject {
-        property int unsharpen: 2
-        property int verysmall: 8
-        property int small: 12
-        property int normal: 17
-        property int large: 23
-        property int full: 9999
-        property int screenRounding: large
-        property int windowRounding: 18
+        property int unsharpen: Common.Config.options.appearance.rounding.unsharpen
+        property int verysmall: Common.Config.options.appearance.rounding.verysmall
+        property int small: Common.Config.options.appearance.rounding.small
+        property int normal: Common.Config.options.appearance.rounding.normal
+        property int large: Common.Config.options.appearance.rounding.large
+        property int full: Common.Config.options.appearance.rounding.full
+        property int screenRounding: Common.Config.options.appearance.rounding.screenRounding
+        property int windowRounding: Common.Config.options.appearance.rounding.windowRounding
     }
 
     font: QtObject {
         property QtObject family: QtObject {
-            property string main: "sans-serif"
-            property string title: "sans-serif"
-            property string expressive: "sans-serif"
+            property string main: Common.Config.options.appearance.font.family.main
+            property string title: Common.Config.options.appearance.font.family.title
+            property string expressive: Common.Config.options.appearance.font.family.expressive
         }
         property QtObject pixelSize: QtObject {
-            property int smaller: 12
-            property int small: 15
-            property int normal: 16
-            property int larger: 19
-            property int huge: 22
+            property int smaller: Common.Config.options.appearance.font.pixelSize.smaller
+            property int small: Common.Config.options.appearance.font.pixelSize.small
+            property int normal: Common.Config.options.appearance.font.pixelSize.normal
+            property int larger: Common.Config.options.appearance.font.pixelSize.larger
+            property int huge: Common.Config.options.appearance.font.pixelSize.huge
         }
     }
 
@@ -106,8 +106,8 @@ Singleton {
         readonly property list<real> expressiveDefaultSpatial: [0.38, 1.21, 0.22, 1.00, 1, 1]
         readonly property list<real> expressiveEffects: [0.34, 0.80, 0.34, 1.00, 1, 1]
         readonly property list<real> emphasizedDecel: [0.05, 0.7, 0.1, 1, 1, 1]
-        readonly property real expressiveDefaultSpatialDuration: 500
-        readonly property real expressiveEffectsDuration: 200
+        readonly property real expressiveDefaultSpatialDuration: Common.Config.options.appearance.animation.duration.elementMove
+        readonly property real expressiveEffectsDuration: Common.Config.options.appearance.animation.duration.elementMoveFast
     }
 
     animation: QtObject {
@@ -125,7 +125,7 @@ Singleton {
         }
 
         property QtObject elementMoveEnter: QtObject {
-            property int duration: 400
+            property int duration: Common.Config.options.appearance.animation.duration.elementMoveEnter
             property int type: Easing.BezierSpline
             property list<real> bezierCurve: animationCurves.emphasizedDecel
             property Component numberAnimation: Component {
@@ -152,6 +152,6 @@ Singleton {
     }
 
     sizes: QtObject {
-        property real elevationMargin: 10
+        property real elevationMargin: Common.Config.options.appearance.sizes.elevationMargin
     }
 }

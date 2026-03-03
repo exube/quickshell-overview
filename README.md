@@ -177,7 +177,10 @@ Edit `~/.config/quickshell/overview/config.json`:
     "columns": 5,
     "scale": 0.16,
     "enable": true,
-    "hideEmptyRows": true
+    "hideEmptyRows": true,
+    "workspaceSpacing": 5,
+    "backgroundPadding": 10,
+    "workspaceNumberBaseSize": 250
   }
 }
 ```
@@ -208,22 +211,78 @@ Edit `~/.config/quickshell/overview/config.json`:
 
 Increase `topMargin` to move the overview down. Decrease it to move up.
 
+### Window Preview
+
+```json
+{
+  "windowPreview": {
+    "iconToWindowRatio": 0.25,
+    "iconToWindowRatioCompact": 0.45,
+    "xwaylandIndicatorToIconRatio": 0.35,
+    "inactiveMonitorOpacity": 0.4
+  }
+}
+```
+
 ### Full Example
 
 ```json
 {
   "appearance": {
-    "useMatugenColors": false
+    "useMatugenColors": false,
+    "rounding": {
+      "unsharpen": 2,
+      "verysmall": 8,
+      "small": 12,
+      "normal": 17,
+      "large": 23,
+      "full": 9999,
+      "screenRounding": 23,
+      "windowRounding": 18
+    },
+    "font": {
+      "family": {
+        "main": "sans-serif",
+        "title": "sans-serif",
+        "expressive": "sans-serif"
+      },
+      "pixelSize": {
+        "smaller": 12,
+        "small": 15,
+        "normal": 16,
+        "larger": 19,
+        "huge": 22
+      }
+    },
+    "animation": {
+      "duration": {
+        "elementMove": 500,
+        "elementMoveEnter": 400,
+        "elementMoveFast": 200
+      }
+    },
+    "sizes": {
+      "elevationMargin": 10
+    }
   },
   "overview": {
     "rows": 2,
     "columns": 5,
     "scale": 0.16,
     "enable": true,
-    "hideEmptyRows": true
+    "hideEmptyRows": true,
+    "workspaceSpacing": 5,
+    "backgroundPadding": 10,
+    "workspaceNumberBaseSize": 250
   },
   "position": {
     "topMargin": 100
+  },
+  "windowPreview": {
+    "iconToWindowRatio": 0.25,
+    "iconToWindowRatioCompact": 0.45,
+    "xwaylandIndicatorToIconRatio": 0.35,
+    "inactiveMonitorOpacity": 0.4
   },
   "hacks": {
     "arbitraryRaceConditionDelay": 150
@@ -233,11 +292,13 @@ Increase `topMargin` to move the overview down. Decrease it to move up.
 
 ### Theme & Colors
 
-Edit `~/.config/quickshell/overview/common/Appearance.qml` to customize:
-- Colors (m3colors and colors objects)
-- Font families and sizes  
-- Animation curves and durations
-- Border radius values
+Most theme sizing/timing options are now configurable via `config.json`:
+- `appearance.rounding.*`
+- `appearance.font.*`
+- `appearance.animation.duration.*`
+- `appearance.sizes.elevationMargin`
+
+For full color palette customization, edit `~/.config/quickshell/overview/common/Appearance.qml`.
 
 ### Matugen (Dynamic Colors from Wallpaper)
 

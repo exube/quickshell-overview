@@ -32,11 +32,11 @@ Item {
         ((monitor.height / monitor.scale - (monitorData?.reserved?.[1] ?? 0) - (monitorData?.reserved?.[3] ?? 0)) * root.scale)
 
     property real workspaceNumberMargin: 80
-    property real workspaceNumberSize: 250 * monitor.scale
+    property real workspaceNumberSize: Config.options.overview.workspaceNumberBaseSize * monitor.scale
     property int workspaceZ: 0
     property int windowZ: 1
     property int windowDraggingZ: 99999
-    property real workspaceSpacing: 5
+    property real workspaceSpacing: Config.options.overview.workspaceSpacing
 
     property int draggingFromWorkspace: -1
     property int draggingTargetWorkspace: -1
@@ -79,7 +79,7 @@ Item {
     }
     Rectangle { // Background
         id: overviewBackground
-        property real padding: 10
+        property real padding: Config.options.overview.backgroundPadding
         anchors.fill: parent
         anchors.margins: Appearance.sizes.elevationMargin
 
